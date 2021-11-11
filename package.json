@@ -1,0 +1,25 @@
+{
+  "name": "tb-review-addon",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "npx prettier --write . && tsc && parcel build src/html/*.*",
+    "tsc": "tsc"
+  },
+  "devDependencies": {
+    "@types/uuid": "^8.3.1",
+    "@typescript-eslint/eslint-plugin": "^4.32.0",
+    "@typescript-eslint/parser": "^4.32.0",
+    "eslint-config-prettier": "^8.3.0",
+    "parcel-bundler": "^1.12.5",
+    "typescript": "^4.3.5"
+  },
+  "dependencies": {
+    "@taskbuddy/add-on": "^1.0.0",
+    "uuid": "^8.3.2"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

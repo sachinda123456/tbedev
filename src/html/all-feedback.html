@@ -1,0 +1,93 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Google+Sans:400,500,700|Google+Sans+Text:400"
+    />
+    <style>
+      .rate {
+        display: flex;
+        flex-flow: row-reverse;
+        margin-right: auto;
+        height: 46px;
+        padding: 0 10px;
+      }
+      .rate:not(:checked) > input {
+        position: absolute;
+        top: -9999px;
+      }
+      .rate:not(:checked) > label {
+        float: right;
+        width: 1em;
+        overflow: hidden;
+        white-space: nowrap;
+        cursor: pointer;
+        font-size: 30px;
+        color: #ccc;
+      }
+      .rate:not(:checked) > label:before {
+        content: '★ ';
+      }
+      .rate > input:checked ~ label {
+        color: #ffc700;
+      }
+      .rate:not(:checked) > label:hover,
+      .rate:not(:checked) > label:hover ~ label {
+        color: #deb217;
+      }
+      .rate > input:checked + label:hover,
+      .rate > input:checked + label:hover ~ label,
+      .rate > input:checked ~ label:hover,
+      .rate > input:checked ~ label:hover ~ label,
+      .rate > label:hover ~ input:checked ~ label {
+        color: #c59b08;
+      }
+      .container {
+        display: flex;
+        flex-direction: column;
+        margin: 1rem;
+      }
+      .container > * {
+        margin-bottom: 1rem;
+      }
+      .reviewcontainer {
+        border: 1px solid var(--Grey-01);
+        border-radius: 0.8rem;
+        padding: 1rem;
+        margin: 1rem;
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+      }
+      .reviewcontainer > * {
+        margin-bottom: 0.5rem;
+        margin-top: 0.5rem;
+      }
+      .reviewcontainer > p:last-of-type {
+        font-weight: 100;
+        font-style: italic;
+      }
+      .morediv {
+        padding: 1rem;
+      }
+      .morediv > p:first-child {
+        font-size: 1.6rem;
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+      }
+      input[type='text']:disabled {
+        background: #ffffff;
+        color: #000000;
+      }
+      textarea:disabled {
+        background: #ffffff;
+        color: #000000;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container" id="container"></div>
+    <script src="../../distTsc/src/ts/all-feedback.js"></script>
+  </body>
+</html>
