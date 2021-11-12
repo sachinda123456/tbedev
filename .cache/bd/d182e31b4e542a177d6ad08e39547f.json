@@ -1,0 +1,15 @@
+{
+  "id": "Skeg",
+  "dependencies": [
+    {
+      "name": "/private/var/www/tbe_add_on/package.json",
+      "includedInParent": true,
+      "mtime": 1635423569000
+    }
+  ],
+  "generated": { "js": "module.exports=\"/4a47a0db6e60853dedfcfdf08a5ca249.png\";" },
+  "sourceMaps": null,
+  "error": null,
+  "hash": "204ad791885798bf944f3c6d1fc7b476",
+  "cacheData": { "env": {} }
+}

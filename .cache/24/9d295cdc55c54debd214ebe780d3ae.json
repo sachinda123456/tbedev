@@ -1,0 +1,15 @@
+{
+  "id": "gmbk",
+  "dependencies": [
+    {
+      "name": "/private/var/www/tbe_add_on/package.json",
+      "includedInParent": true,
+      "mtime": 1635423569000
+    }
+  ],
+  "generated": { "js": "module.exports=\"/8266e4bfeda1bd42d8f9794eb4ea0a13.png\";" },
+  "sourceMaps": null,
+  "error": null,
+  "hash": "b65b8b21738754113175842e77fc2d2d",
+  "cacheData": { "env": {} }
+}

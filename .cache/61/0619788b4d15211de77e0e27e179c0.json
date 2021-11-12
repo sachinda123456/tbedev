@@ -1,0 +1,2541 @@
+{
+  "id": "Svf4",
+  "dependencies": [
+    {
+      "name": "/private/var/www/tbe_add_on/package.json",
+      "includedInParent": true,
+      "mtime": 1635423569000
+    },
+    {
+      "name": "/private/var/www/tbe_add_on/node_modules/@taskbuddy/add-on/package.json",
+      "includedInParent": true,
+      "mtime": 1636628525004
+    }
+  ],
+  "generated": {
+    "js": "\"use strict\";Object.defineProperty(exports,\"__esModule\",{value:!0}),exports.TBAPI=void 0;var t=function(){function t(t,e){this.tbCommunication=t,this.ctx=e}return t.prototype.reRender=function(){this.tbCommunication.request({cmd:\"get\",type:\"re-render\",body:{context:this.ctx}},function(t){})},t.prototype.alert=function(t){var e=this;return new Promise(function(o,n){e.tbCommunication.request({cmd:\"get\",type:\"alert-modal\",body:{msg:t,context:e.ctx}},function(t){200===t.response.status?o(!0):o(!1)})})},t.prototype.webView=function(t,e){var o=this;return new Promise(function(n,r){o.tbCommunication.request({cmd:\"get\",type:\"web-view-modal\",body:{title:t,url:e,context:o.ctx}},function(t){n()})})},t.prototype.closeWebView=function(){var t=this;return new Promise(function(e,o){t.tbCommunication.request({cmd:\"set\",type:\"close-web-view-modal\",body:{context:t.ctx}},function(t){e()})})},t.prototype.linkTo=function(t){var e=this;return new Promise(function(o,n){e.tbCommunication.request({cmd:\"get\",type:\"link-to-url\",body:{url:t,context:e.ctx}},function(t){o()})})},t.prototype.postInChat=function(t,e){var o=this;return new Promise(function(n,r){o.tbCommunication.request({cmd:\"set\",type:\"post-in-chat\",body:{channelId:t,msg:e,context:o.ctx}},function(t){200===t.response.status?n(t.response.body):r(\"Could not post chat msg\")})})},t.prototype.getActiveContextInformation=function(t){var e=this;return new Promise(function(o,n){e.tbCommunication.request({cmd:\"get\",type:\"active-\"+t,body:{context:e.ctx}},function(e){200===e.response.status?o(e.response.body):n(\"Could not get active \"+t)})})},t.prototype.activeAccount=function(){return this.getActiveContextInformation(\"account\")},t.prototype.activeUser=function(){return this.getActiveContextInformation(\"user\")},t.prototype.activeJob=function(){return this.getActiveContextInformation(\"job\")},t.prototype.activeChecklist=function(){return this.getActiveContextInformation(\"checklist\")},t.prototype.activeClient=function(){return this.getActiveContextInformation(\"client\")},t.prototype.activeSite=function(){return this.getActiveContextInformation(\"site\")},t.prototype.getResource=function(t,e){var o=this;return new Promise(function(n,r){var i={};i[t+\"_id\"]=e,o.tbCommunication.request({cmd:\"get\",type:\"resource-\"+t,body:i},function(e){200===e.response.status?n(e.response.body):r(\"Could not get \"+t)})})},t.prototype.getUser=function(t){return this.getResource(\"user\",t)},t.prototype.getJob=function(t){return this.getResource(\"job\",t)},t.prototype.getStorage=function(t,e,o,n){var r=this;return new Promise(function(i,c){r.tbCommunication.request({cmd:\"get\",type:\"storage\",body:{context:r.ctx,type:t,resourceId:e,key:o,availableTo:n}},function(r){200===r.response.status?i(JSON.parse(r.response.body.data)):c(\"Could not get storage for \"+t+\", \"+e+\", \"+o+\", \"+n)})})},t.prototype.setStorage=function(t,e,o,n,r){var i=this;return new Promise(function(c,s){i.tbCommunication.request({cmd:\"set\",type:\"storage\",body:{context:i.ctx,type:t,resourceId:e,key:o,availableTo:n,data:JSON.stringify(r)}},function(r){200===r.response.status?c():s(\"Could not set storage for \"+t+\", \"+e+\", \"+o+\", \"+n)})})},t}();exports.TBAPI=t;"
+  },
+  "sourceMaps": {
+    "js": {
+      "mappings": [
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 1, "column": 0 },
+          "generated": { "line": 1, "column": 0 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 2, "column": 0 },
+          "generated": { "line": 1, "column": 13 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 2, "column": 0 },
+          "generated": { "line": 1, "column": 20 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 2, "column": 0 },
+          "generated": { "line": 1, "column": 35 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 2, "column": 0 },
+          "generated": { "line": 1, "column": 43 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 2, "column": 0 },
+          "generated": { "line": 1, "column": 56 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 2, "column": 0 },
+          "generated": { "line": 1, "column": 57 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 2, "column": 0 },
+          "generated": { "line": 1, "column": 64 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 3, "column": 0 },
+          "generated": { "line": 1, "column": 68 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 3, "column": 0 },
+          "generated": { "line": 1, "column": 76 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 3, "column": 0 },
+          "generated": { "line": 1, "column": 87 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 4, "column": 0 },
+          "generated": { "line": 1, "column": 89 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 4, "column": 0 },
+          "generated": { "line": 1, "column": 93 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 4, "column": 0 },
+          "generated": { "line": 1, "column": 95 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 5, "column": 0 },
+          "generated": { "line": 1, "column": 106 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 5, "column": 0 },
+          "generated": { "line": 1, "column": 115 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 5, "column": 0 },
+          "generated": { "line": 1, "column": 117 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 5, "column": 0 },
+          "generated": { "line": 1, "column": 119 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 6, "column": 0 },
+          "generated": { "line": 1, "column": 122 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 6, "column": 0 },
+          "generated": { "line": 1, "column": 127 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 6, "column": 0 },
+          "generated": { "line": 1, "column": 143 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 7, "column": 0 },
+          "generated": { "line": 1, "column": 145 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 7, "column": 0 },
+          "generated": { "line": 1, "column": 150 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 7, "column": 0 },
+          "generated": { "line": 1, "column": 154 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 268, "column": 0 },
+          "generated": { "line": 1, "column": 156 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 12, "column": 0 },
+          "generated": { "line": 1, "column": 163 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 12, "column": 0 },
+          "generated": { "line": 1, "column": 165 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 12, "column": 0 },
+          "generated": { "line": 1, "column": 175 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 12, "column": 0 },
+          "generated": { "line": 1, "column": 184 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 13, "column": 0 },
+          "generated": { "line": 1, "column": 195 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 13, "column": 0 },
+          "generated": { "line": 1, "column": 200 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 13, "column": 0 },
+          "generated": { "line": 1, "column": 216 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 13, "column": 0 },
+          "generated": { "line": 1, "column": 224 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 14, "column": 0 },
+          "generated": { "line": 1, "column": 225 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 14, "column": 0 },
+          "generated": { "line": 1, "column": 229 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 15, "column": 0 },
+          "generated": { "line": 1, "column": 235 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 15, "column": 0 },
+          "generated": { "line": 1, "column": 240 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 16, "column": 0 },
+          "generated": { "line": 1, "column": 252 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 16, "column": 0 },
+          "generated": { "line": 1, "column": 257 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 17, "column": 0 },
+          "generated": { "line": 1, "column": 258 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 17, "column": 0 },
+          "generated": { "line": 1, "column": 266 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 17, "column": 0 },
+          "generated": { "line": 1, "column": 271 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 19, "column": 0 },
+          "generated": { "line": 1, "column": 277 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 19, "column": 0 },
+          "generated": { "line": 1, "column": 286 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 24, "column": 0 },
+          "generated": { "line": 1, "column": 293 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 24, "column": 0 },
+          "generated": { "line": 1, "column": 295 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 24, "column": 0 },
+          "generated": { "line": 1, "column": 305 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 24, "column": 0 },
+          "generated": { "line": 1, "column": 311 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 24, "column": 0 },
+          "generated": { "line": 1, "column": 320 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 25, "column": 0 },
+          "generated": { "line": 1, "column": 323 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 25, "column": 0 },
+          "generated": { "line": 1, "column": 327 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 25, "column": 0 },
+          "generated": { "line": 1, "column": 329 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 26, "column": 0 },
+          "generated": { "line": 1, "column": 334 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 26, "column": 0 },
+          "generated": { "line": 1, "column": 341 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 26, "column": 0 },
+          "generated": { "line": 1, "column": 345 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 26, "column": 0 },
+          "generated": { "line": 1, "column": 353 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 26, "column": 0 },
+          "generated": { "line": 1, "column": 362 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 26, "column": 0 },
+          "generated": { "line": 1, "column": 364 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 27, "column": 0 },
+          "generated": { "line": 1, "column": 367 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 27, "column": 0 },
+          "generated": { "line": 1, "column": 369 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 27, "column": 0 },
+          "generated": { "line": 1, "column": 385 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 27, "column": 0 },
+          "generated": { "line": 1, "column": 393 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 28, "column": 0 },
+          "generated": { "line": 1, "column": 394 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 28, "column": 0 },
+          "generated": { "line": 1, "column": 398 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 29, "column": 0 },
+          "generated": { "line": 1, "column": 404 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 29, "column": 0 },
+          "generated": { "line": 1, "column": 409 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 30, "column": 0 },
+          "generated": { "line": 1, "column": 423 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 30, "column": 0 },
+          "generated": { "line": 1, "column": 428 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 31, "column": 0 },
+          "generated": { "line": 1, "column": 429 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 31, "column": 0 },
+          "generated": { "line": 1, "column": 433 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 32, "column": 0 },
+          "generated": { "line": 1, "column": 435 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 32, "column": 0 },
+          "generated": { "line": 1, "column": 443 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 32, "column": 0 },
+          "generated": { "line": 1, "column": 445 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 34, "column": 0 },
+          "generated": { "line": 1, "column": 451 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 34, "column": 0 },
+          "generated": { "line": 1, "column": 460 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 35, "column": 0 },
+          "generated": { "line": 1, "column": 463 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 35, "column": 0 },
+          "generated": { "line": 1, "column": 469 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 35, "column": 0 },
+          "generated": { "line": 1, "column": 471 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 35, "column": 0 },
+          "generated": { "line": 1, "column": 480 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 36, "column": 0 },
+          "generated": { "line": 1, "column": 487 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 36, "column": 0 },
+          "generated": { "line": 1, "column": 490 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 39, "column": 0 },
+          "generated": { "line": 1, "column": 493 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 39, "column": 0 },
+          "generated": { "line": 1, "column": 496 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 47, "column": 0 },
+          "generated": { "line": 1, "column": 504 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 47, "column": 0 },
+          "generated": { "line": 1, "column": 506 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 47, "column": 0 },
+          "generated": { "line": 1, "column": 516 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 47, "column": 0 },
+          "generated": { "line": 1, "column": 524 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 47, "column": 0 },
+          "generated": { "line": 1, "column": 533 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 47, "column": 0 },
+          "generated": { "line": 1, "column": 535 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 48, "column": 0 },
+          "generated": { "line": 1, "column": 538 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 48, "column": 0 },
+          "generated": { "line": 1, "column": 542 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 48, "column": 0 },
+          "generated": { "line": 1, "column": 544 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 49, "column": 0 },
+          "generated": { "line": 1, "column": 549 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 49, "column": 0 },
+          "generated": { "line": 1, "column": 556 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 49, "column": 0 },
+          "generated": { "line": 1, "column": 560 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 49, "column": 0 },
+          "generated": { "line": 1, "column": 568 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 49, "column": 0 },
+          "generated": { "line": 1, "column": 577 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 49, "column": 0 },
+          "generated": { "line": 1, "column": 579 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 50, "column": 0 },
+          "generated": { "line": 1, "column": 582 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 50, "column": 0 },
+          "generated": { "line": 1, "column": 584 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 50, "column": 0 },
+          "generated": { "line": 1, "column": 600 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 50, "column": 0 },
+          "generated": { "line": 1, "column": 608 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 51, "column": 0 },
+          "generated": { "line": 1, "column": 609 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 51, "column": 0 },
+          "generated": { "line": 1, "column": 613 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 52, "column": 0 },
+          "generated": { "line": 1, "column": 619 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 52, "column": 0 },
+          "generated": { "line": 1, "column": 624 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 53, "column": 0 },
+          "generated": { "line": 1, "column": 641 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 53, "column": 0 },
+          "generated": { "line": 1, "column": 646 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 54, "column": 0 },
+          "generated": { "line": 1, "column": 647 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 54, "column": 0 },
+          "generated": { "line": 1, "column": 653 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 55, "column": 0 },
+          "generated": { "line": 1, "column": 655 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 55, "column": 0 },
+          "generated": { "line": 1, "column": 659 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 56, "column": 0 },
+          "generated": { "line": 1, "column": 661 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 56, "column": 0 },
+          "generated": { "line": 1, "column": 669 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 56, "column": 0 },
+          "generated": { "line": 1, "column": 671 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 58, "column": 0 },
+          "generated": { "line": 1, "column": 677 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 58, "column": 0 },
+          "generated": { "line": 1, "column": 686 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 59, "column": 0 },
+          "generated": { "line": 1, "column": 689 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 66, "column": 0 },
+          "generated": { "line": 1, "column": 698 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 66, "column": 0 },
+          "generated": { "line": 1, "column": 700 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 66, "column": 0 },
+          "generated": { "line": 1, "column": 710 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 66, "column": 0 },
+          "generated": { "line": 1, "column": 723 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 67, "column": 0 },
+          "generated": { "line": 1, "column": 734 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 67, "column": 0 },
+          "generated": { "line": 1, "column": 738 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 67, "column": 0 },
+          "generated": { "line": 1, "column": 740 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 68, "column": 0 },
+          "generated": { "line": 1, "column": 745 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 68, "column": 0 },
+          "generated": { "line": 1, "column": 752 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 68, "column": 0 },
+          "generated": { "line": 1, "column": 756 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 68, "column": 0 },
+          "generated": { "line": 1, "column": 764 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 68, "column": 0 },
+          "generated": { "line": 1, "column": 773 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 68, "column": 0 },
+          "generated": { "line": 1, "column": 775 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 69, "column": 0 },
+          "generated": { "line": 1, "column": 778 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 69, "column": 0 },
+          "generated": { "line": 1, "column": 780 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 69, "column": 0 },
+          "generated": { "line": 1, "column": 796 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 69, "column": 0 },
+          "generated": { "line": 1, "column": 804 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 70, "column": 0 },
+          "generated": { "line": 1, "column": 805 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 70, "column": 0 },
+          "generated": { "line": 1, "column": 809 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 71, "column": 0 },
+          "generated": { "line": 1, "column": 815 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 71, "column": 0 },
+          "generated": { "line": 1, "column": 820 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 72, "column": 0 },
+          "generated": { "line": 1, "column": 843 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 72, "column": 0 },
+          "generated": { "line": 1, "column": 848 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 73, "column": 0 },
+          "generated": { "line": 1, "column": 849 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 73, "column": 0 },
+          "generated": { "line": 1, "column": 857 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 73, "column": 0 },
+          "generated": { "line": 1, "column": 859 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 75, "column": 0 },
+          "generated": { "line": 1, "column": 865 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 75, "column": 0 },
+          "generated": { "line": 1, "column": 874 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 76, "column": 0 },
+          "generated": { "line": 1, "column": 877 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 83, "column": 0 },
+          "generated": { "line": 1, "column": 886 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 83, "column": 0 },
+          "generated": { "line": 1, "column": 888 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 83, "column": 0 },
+          "generated": { "line": 1, "column": 898 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 83, "column": 0 },
+          "generated": { "line": 1, "column": 905 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 83, "column": 0 },
+          "generated": { "line": 1, "column": 914 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 84, "column": 0 },
+          "generated": { "line": 1, "column": 917 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 84, "column": 0 },
+          "generated": { "line": 1, "column": 921 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 84, "column": 0 },
+          "generated": { "line": 1, "column": 923 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 85, "column": 0 },
+          "generated": { "line": 1, "column": 928 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 85, "column": 0 },
+          "generated": { "line": 1, "column": 935 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 85, "column": 0 },
+          "generated": { "line": 1, "column": 939 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 85, "column": 0 },
+          "generated": { "line": 1, "column": 947 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 85, "column": 0 },
+          "generated": { "line": 1, "column": 956 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 85, "column": 0 },
+          "generated": { "line": 1, "column": 958 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 86, "column": 0 },
+          "generated": { "line": 1, "column": 961 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 86, "column": 0 },
+          "generated": { "line": 1, "column": 963 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 86, "column": 0 },
+          "generated": { "line": 1, "column": 979 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 86, "column": 0 },
+          "generated": { "line": 1, "column": 987 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 87, "column": 0 },
+          "generated": { "line": 1, "column": 988 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 87, "column": 0 },
+          "generated": { "line": 1, "column": 992 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 88, "column": 0 },
+          "generated": { "line": 1, "column": 998 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 88, "column": 0 },
+          "generated": { "line": 1, "column": 1003 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 89, "column": 0 },
+          "generated": { "line": 1, "column": 1017 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 89, "column": 0 },
+          "generated": { "line": 1, "column": 1022 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 90, "column": 0 },
+          "generated": { "line": 1, "column": 1023 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 90, "column": 0 },
+          "generated": { "line": 1, "column": 1027 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 91, "column": 0 },
+          "generated": { "line": 1, "column": 1029 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 91, "column": 0 },
+          "generated": { "line": 1, "column": 1037 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 91, "column": 0 },
+          "generated": { "line": 1, "column": 1039 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 93, "column": 0 },
+          "generated": { "line": 1, "column": 1045 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 93, "column": 0 },
+          "generated": { "line": 1, "column": 1054 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 94, "column": 0 },
+          "generated": { "line": 1, "column": 1057 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 101, "column": 0 },
+          "generated": { "line": 1, "column": 1066 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 101, "column": 0 },
+          "generated": { "line": 1, "column": 1068 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 101, "column": 0 },
+          "generated": { "line": 1, "column": 1078 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 101, "column": 0 },
+          "generated": { "line": 1, "column": 1089 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 101, "column": 0 },
+          "generated": { "line": 1, "column": 1098 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 101, "column": 0 },
+          "generated": { "line": 1, "column": 1100 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 102, "column": 0 },
+          "generated": { "line": 1, "column": 1103 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 102, "column": 0 },
+          "generated": { "line": 1, "column": 1107 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 102, "column": 0 },
+          "generated": { "line": 1, "column": 1109 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 103, "column": 0 },
+          "generated": { "line": 1, "column": 1114 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 103, "column": 0 },
+          "generated": { "line": 1, "column": 1121 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 103, "column": 0 },
+          "generated": { "line": 1, "column": 1125 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 103, "column": 0 },
+          "generated": { "line": 1, "column": 1133 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 103, "column": 0 },
+          "generated": { "line": 1, "column": 1142 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 103, "column": 0 },
+          "generated": { "line": 1, "column": 1144 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 104, "column": 0 },
+          "generated": { "line": 1, "column": 1147 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 104, "column": 0 },
+          "generated": { "line": 1, "column": 1149 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 104, "column": 0 },
+          "generated": { "line": 1, "column": 1165 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 104, "column": 0 },
+          "generated": { "line": 1, "column": 1173 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 105, "column": 0 },
+          "generated": { "line": 1, "column": 1174 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 105, "column": 0 },
+          "generated": { "line": 1, "column": 1178 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 106, "column": 0 },
+          "generated": { "line": 1, "column": 1184 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 106, "column": 0 },
+          "generated": { "line": 1, "column": 1189 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 107, "column": 0 },
+          "generated": { "line": 1, "column": 1204 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 107, "column": 0 },
+          "generated": { "line": 1, "column": 1209 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 108, "column": 0 },
+          "generated": { "line": 1, "column": 1210 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 108, "column": 0 },
+          "generated": { "line": 1, "column": 1220 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 109, "column": 0 },
+          "generated": { "line": 1, "column": 1222 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 109, "column": 0 },
+          "generated": { "line": 1, "column": 1226 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 110, "column": 0 },
+          "generated": { "line": 1, "column": 1228 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 110, "column": 0 },
+          "generated": { "line": 1, "column": 1236 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 110, "column": 0 },
+          "generated": { "line": 1, "column": 1238 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 112, "column": 0 },
+          "generated": { "line": 1, "column": 1244 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 112, "column": 0 },
+          "generated": { "line": 1, "column": 1253 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 113, "column": 0 },
+          "generated": { "line": 1, "column": 1256 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 113, "column": 0 },
+          "generated": { "line": 1, "column": 1262 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 113, "column": 0 },
+          "generated": { "line": 1, "column": 1264 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 113, "column": 0 },
+          "generated": { "line": 1, "column": 1273 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 114, "column": 0 },
+          "generated": { "line": 1, "column": 1280 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 114, "column": 0 },
+          "generated": { "line": 1, "column": 1282 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 114, "column": 0 },
+          "generated": { "line": 1, "column": 1284 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 114, "column": 0 },
+          "generated": { "line": 1, "column": 1293 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 117, "column": 0 },
+          "generated": { "line": 1, "column": 1299 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 117, "column": 0 },
+          "generated": { "line": 1, "column": 1301 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 125, "column": 0 },
+          "generated": { "line": 1, "column": 1333 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 125, "column": 0 },
+          "generated": { "line": 1, "column": 1335 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 125, "column": 0 },
+          "generated": { "line": 1, "column": 1345 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 125, "column": 0 },
+          "generated": { "line": 1, "column": 1373 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 125, "column": 0 },
+          "generated": { "line": 1, "column": 1382 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 126, "column": 0 },
+          "generated": { "line": 1, "column": 1385 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 126, "column": 0 },
+          "generated": { "line": 1, "column": 1389 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 126, "column": 0 },
+          "generated": { "line": 1, "column": 1391 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 127, "column": 0 },
+          "generated": { "line": 1, "column": 1396 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 127, "column": 0 },
+          "generated": { "line": 1, "column": 1403 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 127, "column": 0 },
+          "generated": { "line": 1, "column": 1407 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 127, "column": 0 },
+          "generated": { "line": 1, "column": 1415 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 127, "column": 0 },
+          "generated": { "line": 1, "column": 1424 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 127, "column": 0 },
+          "generated": { "line": 1, "column": 1426 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 128, "column": 0 },
+          "generated": { "line": 1, "column": 1429 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 128, "column": 0 },
+          "generated": { "line": 1, "column": 1431 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 128, "column": 0 },
+          "generated": { "line": 1, "column": 1447 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 128, "column": 0 },
+          "generated": { "line": 1, "column": 1455 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 129, "column": 0 },
+          "generated": { "line": 1, "column": 1456 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 129, "column": 0 },
+          "generated": { "line": 1, "column": 1460 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 130, "column": 0 },
+          "generated": { "line": 1, "column": 1466 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 130, "column": 0 },
+          "generated": { "line": 1, "column": 1471 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 130, "column": 0 },
+          "generated": { "line": 1, "column": 1481 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 131, "column": 0 },
+          "generated": { "line": 1, "column": 1483 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 131, "column": 0 },
+          "generated": { "line": 1, "column": 1488 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 132, "column": 0 },
+          "generated": { "line": 1, "column": 1489 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 132, "column": 0 },
+          "generated": { "line": 1, "column": 1497 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 132, "column": 0 },
+          "generated": { "line": 1, "column": 1499 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 134, "column": 0 },
+          "generated": { "line": 1, "column": 1505 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 134, "column": 0 },
+          "generated": { "line": 1, "column": 1514 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 135, "column": 0 },
+          "generated": { "line": 1, "column": 1517 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 135, "column": 0 },
+          "generated": { "line": 1, "column": 1523 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 135, "column": 0 },
+          "generated": { "line": 1, "column": 1525 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 135, "column": 0 },
+          "generated": { "line": 1, "column": 1534 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 136, "column": 0 },
+          "generated": { "line": 1, "column": 1541 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 136, "column": 0 },
+          "generated": { "line": 1, "column": 1543 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 136, "column": 0 },
+          "generated": { "line": 1, "column": 1545 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 136, "column": 0 },
+          "generated": { "line": 1, "column": 1554 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 139, "column": 0 },
+          "generated": { "line": 1, "column": 1560 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 139, "column": 0 },
+          "generated": { "line": 1, "column": 1562 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 139, "column": 0 },
+          "generated": { "line": 1, "column": 1586 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 147, "column": 0 },
+          "generated": { "line": 1, "column": 1594 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 147, "column": 0 },
+          "generated": { "line": 1, "column": 1596 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 147, "column": 0 },
+          "generated": { "line": 1, "column": 1606 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 147, "column": 0 },
+          "generated": { "line": 1, "column": 1620 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 148, "column": 0 },
+          "generated": { "line": 1, "column": 1631 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 148, "column": 0 },
+          "generated": { "line": 1, "column": 1638 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 148, "column": 0 },
+          "generated": { "line": 1, "column": 1643 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 148, "column": 0 },
+          "generated": { "line": 1, "column": 1671 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 153, "column": 0 },
+          "generated": { "line": 1, "column": 1683 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 153, "column": 0 },
+          "generated": { "line": 1, "column": 1685 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 153, "column": 0 },
+          "generated": { "line": 1, "column": 1695 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 153, "column": 0 },
+          "generated": { "line": 1, "column": 1706 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 154, "column": 0 },
+          "generated": { "line": 1, "column": 1717 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 154, "column": 0 },
+          "generated": { "line": 1, "column": 1724 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 154, "column": 0 },
+          "generated": { "line": 1, "column": 1729 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 154, "column": 0 },
+          "generated": { "line": 1, "column": 1757 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 159, "column": 0 },
+          "generated": { "line": 1, "column": 1766 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 159, "column": 0 },
+          "generated": { "line": 1, "column": 1768 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 159, "column": 0 },
+          "generated": { "line": 1, "column": 1778 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 159, "column": 0 },
+          "generated": { "line": 1, "column": 1788 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 160, "column": 0 },
+          "generated": { "line": 1, "column": 1799 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 160, "column": 0 },
+          "generated": { "line": 1, "column": 1806 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 160, "column": 0 },
+          "generated": { "line": 1, "column": 1811 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 160, "column": 0 },
+          "generated": { "line": 1, "column": 1839 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 165, "column": 0 },
+          "generated": { "line": 1, "column": 1847 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 165, "column": 0 },
+          "generated": { "line": 1, "column": 1849 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 165, "column": 0 },
+          "generated": { "line": 1, "column": 1859 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 165, "column": 0 },
+          "generated": { "line": 1, "column": 1875 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 166, "column": 0 },
+          "generated": { "line": 1, "column": 1886 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 166, "column": 0 },
+          "generated": { "line": 1, "column": 1893 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 166, "column": 0 },
+          "generated": { "line": 1, "column": 1898 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 166, "column": 0 },
+          "generated": { "line": 1, "column": 1926 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 171, "column": 0 },
+          "generated": { "line": 1, "column": 1940 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 171, "column": 0 },
+          "generated": { "line": 1, "column": 1942 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 171, "column": 0 },
+          "generated": { "line": 1, "column": 1952 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 171, "column": 0 },
+          "generated": { "line": 1, "column": 1965 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 172, "column": 0 },
+          "generated": { "line": 1, "column": 1976 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 172, "column": 0 },
+          "generated": { "line": 1, "column": 1983 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 172, "column": 0 },
+          "generated": { "line": 1, "column": 1988 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 172, "column": 0 },
+          "generated": { "line": 1, "column": 2016 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 177, "column": 0 },
+          "generated": { "line": 1, "column": 2027 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 177, "column": 0 },
+          "generated": { "line": 1, "column": 2029 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 177, "column": 0 },
+          "generated": { "line": 1, "column": 2039 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 177, "column": 0 },
+          "generated": { "line": 1, "column": 2050 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 178, "column": 0 },
+          "generated": { "line": 1, "column": 2061 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 178, "column": 0 },
+          "generated": { "line": 1, "column": 2068 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 178, "column": 0 },
+          "generated": { "line": 1, "column": 2073 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 178, "column": 0 },
+          "generated": { "line": 1, "column": 2101 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 183, "column": 0 },
+          "generated": { "line": 1, "column": 2110 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 183, "column": 0 },
+          "generated": { "line": 1, "column": 2112 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 183, "column": 0 },
+          "generated": { "line": 1, "column": 2122 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 183, "column": 0 },
+          "generated": { "line": 1, "column": 2134 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 183, "column": 0 },
+          "generated": { "line": 1, "column": 2143 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 183, "column": 0 },
+          "generated": { "line": 1, "column": 2145 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 184, "column": 0 },
+          "generated": { "line": 1, "column": 2148 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 184, "column": 0 },
+          "generated": { "line": 1, "column": 2152 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 184, "column": 0 },
+          "generated": { "line": 1, "column": 2154 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 185, "column": 0 },
+          "generated": { "line": 1, "column": 2159 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 185, "column": 0 },
+          "generated": { "line": 1, "column": 2166 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 185, "column": 0 },
+          "generated": { "line": 1, "column": 2170 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 185, "column": 0 },
+          "generated": { "line": 1, "column": 2178 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 185, "column": 0 },
+          "generated": { "line": 1, "column": 2187 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 185, "column": 0 },
+          "generated": { "line": 1, "column": 2189 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 186, "column": 0 },
+          "generated": { "line": 1, "column": 2192 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 186, "column": 0 },
+          "generated": { "line": 1, "column": 2196 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 186, "column": 0 },
+          "generated": { "line": 1, "column": 2198 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 188, "column": 0 },
+          "generated": { "line": 1, "column": 2201 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 188, "column": 0 },
+          "generated": { "line": 1, "column": 2203 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 188, "column": 0 },
+          "generated": { "line": 1, "column": 2205 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 188, "column": 0 },
+          "generated": { "line": 1, "column": 2212 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 189, "column": 0 },
+          "generated": { "line": 1, "column": 2214 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 189, "column": 0 },
+          "generated": { "line": 1, "column": 2216 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 189, "column": 0 },
+          "generated": { "line": 1, "column": 2232 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 189, "column": 0 },
+          "generated": { "line": 1, "column": 2240 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 190, "column": 0 },
+          "generated": { "line": 1, "column": 2241 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 190, "column": 0 },
+          "generated": { "line": 1, "column": 2245 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 191, "column": 0 },
+          "generated": { "line": 1, "column": 2251 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 191, "column": 0 },
+          "generated": { "line": 1, "column": 2256 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 191, "column": 0 },
+          "generated": { "line": 1, "column": 2268 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 192, "column": 0 },
+          "generated": { "line": 1, "column": 2270 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 192, "column": 0 },
+          "generated": { "line": 1, "column": 2275 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 193, "column": 0 },
+          "generated": { "line": 1, "column": 2278 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 193, "column": 0 },
+          "generated": { "line": 1, "column": 2287 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 194, "column": 0 },
+          "generated": { "line": 1, "column": 2290 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 194, "column": 0 },
+          "generated": { "line": 1, "column": 2296 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 194, "column": 0 },
+          "generated": { "line": 1, "column": 2298 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 194, "column": 0 },
+          "generated": { "line": 1, "column": 2307 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 195, "column": 0 },
+          "generated": { "line": 1, "column": 2314 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 195, "column": 0 },
+          "generated": { "line": 1, "column": 2316 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 195, "column": 0 },
+          "generated": { "line": 1, "column": 2318 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 195, "column": 0 },
+          "generated": { "line": 1, "column": 2327 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 198, "column": 0 },
+          "generated": { "line": 1, "column": 2333 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 198, "column": 0 },
+          "generated": { "line": 1, "column": 2335 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 198, "column": 0 },
+          "generated": { "line": 1, "column": 2352 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 206, "column": 0 },
+          "generated": { "line": 1, "column": 2360 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 206, "column": 0 },
+          "generated": { "line": 1, "column": 2362 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 206, "column": 0 },
+          "generated": { "line": 1, "column": 2372 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 206, "column": 0 },
+          "generated": { "line": 1, "column": 2380 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 206, "column": 0 },
+          "generated": { "line": 1, "column": 2389 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 207, "column": 0 },
+          "generated": { "line": 1, "column": 2392 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 207, "column": 0 },
+          "generated": { "line": 1, "column": 2399 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 207, "column": 0 },
+          "generated": { "line": 1, "column": 2404 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 207, "column": 0 },
+          "generated": { "line": 1, "column": 2416 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 207, "column": 0 },
+          "generated": { "line": 1, "column": 2423 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 212, "column": 0 },
+          "generated": { "line": 1, "column": 2427 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 212, "column": 0 },
+          "generated": { "line": 1, "column": 2429 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 212, "column": 0 },
+          "generated": { "line": 1, "column": 2439 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 212, "column": 0 },
+          "generated": { "line": 1, "column": 2446 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 212, "column": 0 },
+          "generated": { "line": 1, "column": 2455 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 213, "column": 0 },
+          "generated": { "line": 1, "column": 2458 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 213, "column": 0 },
+          "generated": { "line": 1, "column": 2465 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 213, "column": 0 },
+          "generated": { "line": 1, "column": 2470 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 213, "column": 0 },
+          "generated": { "line": 1, "column": 2482 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 213, "column": 0 },
+          "generated": { "line": 1, "column": 2488 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 218, "column": 0 },
+          "generated": { "line": 1, "column": 2492 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 218, "column": 0 },
+          "generated": { "line": 1, "column": 2494 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 218, "column": 0 },
+          "generated": { "line": 1, "column": 2504 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 218, "column": 0 },
+          "generated": { "line": 1, "column": 2515 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 218, "column": 0 },
+          "generated": { "line": 1, "column": 2524 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 218, "column": 0 },
+          "generated": { "line": 1, "column": 2526 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 218, "column": 0 },
+          "generated": { "line": 1, "column": 2528 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 218, "column": 0 },
+          "generated": { "line": 1, "column": 2530 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 219, "column": 0 },
+          "generated": { "line": 1, "column": 2533 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 219, "column": 0 },
+          "generated": { "line": 1, "column": 2537 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 219, "column": 0 },
+          "generated": { "line": 1, "column": 2539 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 220, "column": 0 },
+          "generated": { "line": 1, "column": 2544 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 220, "column": 0 },
+          "generated": { "line": 1, "column": 2551 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 220, "column": 0 },
+          "generated": { "line": 1, "column": 2555 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 220, "column": 0 },
+          "generated": { "line": 1, "column": 2563 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 220, "column": 0 },
+          "generated": { "line": 1, "column": 2572 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 220, "column": 0 },
+          "generated": { "line": 1, "column": 2574 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 221, "column": 0 },
+          "generated": { "line": 1, "column": 2577 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 221, "column": 0 },
+          "generated": { "line": 1, "column": 2579 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 221, "column": 0 },
+          "generated": { "line": 1, "column": 2595 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 221, "column": 0 },
+          "generated": { "line": 1, "column": 2603 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 222, "column": 0 },
+          "generated": { "line": 1, "column": 2604 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 222, "column": 0 },
+          "generated": { "line": 1, "column": 2608 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 223, "column": 0 },
+          "generated": { "line": 1, "column": 2614 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 223, "column": 0 },
+          "generated": { "line": 1, "column": 2619 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 224, "column": 0 },
+          "generated": { "line": 1, "column": 2629 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 224, "column": 0 },
+          "generated": { "line": 1, "column": 2634 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 225, "column": 0 },
+          "generated": { "line": 1, "column": 2635 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 225, "column": 0 },
+          "generated": { "line": 1, "column": 2643 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 225, "column": 0 },
+          "generated": { "line": 1, "column": 2645 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 226, "column": 0 },
+          "generated": { "line": 1, "column": 2649 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 226, "column": 0 },
+          "generated": { "line": 1, "column": 2654 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 227, "column": 0 },
+          "generated": { "line": 1, "column": 2656 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 227, "column": 0 },
+          "generated": { "line": 1, "column": 2667 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 228, "column": 0 },
+          "generated": { "line": 1, "column": 2669 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 228, "column": 0 },
+          "generated": { "line": 1, "column": 2673 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 229, "column": 0 },
+          "generated": { "line": 1, "column": 2675 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 229, "column": 0 },
+          "generated": { "line": 1, "column": 2687 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 231, "column": 0 },
+          "generated": { "line": 1, "column": 2691 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 231, "column": 0 },
+          "generated": { "line": 1, "column": 2700 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 232, "column": 0 },
+          "generated": { "line": 1, "column": 2703 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 232, "column": 0 },
+          "generated": { "line": 1, "column": 2709 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 232, "column": 0 },
+          "generated": { "line": 1, "column": 2711 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 232, "column": 0 },
+          "generated": { "line": 1, "column": 2720 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 233, "column": 0 },
+          "generated": { "line": 1, "column": 2727 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 233, "column": 0 },
+          "generated": { "line": 1, "column": 2729 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 233, "column": 0 },
+          "generated": { "line": 1, "column": 2734 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 233, "column": 0 },
+          "generated": { "line": 1, "column": 2740 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 233, "column": 0 },
+          "generated": { "line": 1, "column": 2742 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 233, "column": 0 },
+          "generated": { "line": 1, "column": 2751 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 233, "column": 0 },
+          "generated": { "line": 1, "column": 2756 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 236, "column": 0 },
+          "generated": { "line": 1, "column": 2763 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 236, "column": 0 },
+          "generated": { "line": 1, "column": 2765 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 236, "column": 0 },
+          "generated": { "line": 1, "column": 2794 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 236, "column": 0 },
+          "generated": { "line": 1, "column": 2796 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 236, "column": 0 },
+          "generated": { "line": 1, "column": 2801 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 236, "column": 0 },
+          "generated": { "line": 1, "column": 2803 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 236, "column": 0 },
+          "generated": { "line": 1, "column": 2808 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 236, "column": 0 },
+          "generated": { "line": 1, "column": 2810 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 236, "column": 0 },
+          "generated": { "line": 1, "column": 2815 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 244, "column": 0 },
+          "generated": { "line": 1, "column": 2823 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 244, "column": 0 },
+          "generated": { "line": 1, "column": 2825 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 244, "column": 0 },
+          "generated": { "line": 1, "column": 2835 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 244, "column": 0 },
+          "generated": { "line": 1, "column": 2846 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 244, "column": 0 },
+          "generated": { "line": 1, "column": 2855 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 244, "column": 0 },
+          "generated": { "line": 1, "column": 2857 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 244, "column": 0 },
+          "generated": { "line": 1, "column": 2859 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 244, "column": 0 },
+          "generated": { "line": 1, "column": 2861 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 244, "column": 0 },
+          "generated": { "line": 1, "column": 2863 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 245, "column": 0 },
+          "generated": { "line": 1, "column": 2866 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 245, "column": 0 },
+          "generated": { "line": 1, "column": 2870 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 245, "column": 0 },
+          "generated": { "line": 1, "column": 2872 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 246, "column": 0 },
+          "generated": { "line": 1, "column": 2877 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 246, "column": 0 },
+          "generated": { "line": 1, "column": 2884 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 246, "column": 0 },
+          "generated": { "line": 1, "column": 2888 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 246, "column": 0 },
+          "generated": { "line": 1, "column": 2896 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 246, "column": 0 },
+          "generated": { "line": 1, "column": 2905 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 246, "column": 0 },
+          "generated": { "line": 1, "column": 2907 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 247, "column": 0 },
+          "generated": { "line": 1, "column": 2910 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 247, "column": 0 },
+          "generated": { "line": 1, "column": 2912 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 247, "column": 0 },
+          "generated": { "line": 1, "column": 2928 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 247, "column": 0 },
+          "generated": { "line": 1, "column": 2936 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 248, "column": 0 },
+          "generated": { "line": 1, "column": 2937 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 248, "column": 0 },
+          "generated": { "line": 1, "column": 2941 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 249, "column": 0 },
+          "generated": { "line": 1, "column": 2947 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 249, "column": 0 },
+          "generated": { "line": 1, "column": 2952 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 250, "column": 0 },
+          "generated": { "line": 1, "column": 2962 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 250, "column": 0 },
+          "generated": { "line": 1, "column": 2967 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 251, "column": 0 },
+          "generated": { "line": 1, "column": 2968 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 251, "column": 0 },
+          "generated": { "line": 1, "column": 2976 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 251, "column": 0 },
+          "generated": { "line": 1, "column": 2978 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 252, "column": 0 },
+          "generated": { "line": 1, "column": 2982 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 252, "column": 0 },
+          "generated": { "line": 1, "column": 2987 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 253, "column": 0 },
+          "generated": { "line": 1, "column": 2989 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 253, "column": 0 },
+          "generated": { "line": 1, "column": 3000 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 254, "column": 0 },
+          "generated": { "line": 1, "column": 3002 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 254, "column": 0 },
+          "generated": { "line": 1, "column": 3006 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 255, "column": 0 },
+          "generated": { "line": 1, "column": 3008 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 255, "column": 0 },
+          "generated": { "line": 1, "column": 3020 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 256, "column": 0 },
+          "generated": { "line": 1, "column": 3022 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 256, "column": 0 },
+          "generated": { "line": 1, "column": 3027 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 256, "column": 0 },
+          "generated": { "line": 1, "column": 3032 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 256, "column": 0 },
+          "generated": { "line": 1, "column": 3042 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 258, "column": 0 },
+          "generated": { "line": 1, "column": 3047 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 258, "column": 0 },
+          "generated": { "line": 1, "column": 3056 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 259, "column": 0 },
+          "generated": { "line": 1, "column": 3059 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 259, "column": 0 },
+          "generated": { "line": 1, "column": 3065 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 259, "column": 0 },
+          "generated": { "line": 1, "column": 3067 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 259, "column": 0 },
+          "generated": { "line": 1, "column": 3076 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 260, "column": 0 },
+          "generated": { "line": 1, "column": 3083 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 263, "column": 0 },
+          "generated": { "line": 1, "column": 3087 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 263, "column": 0 },
+          "generated": { "line": 1, "column": 3089 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 263, "column": 0 },
+          "generated": { "line": 1, "column": 3118 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 263, "column": 0 },
+          "generated": { "line": 1, "column": 3120 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 263, "column": 0 },
+          "generated": { "line": 1, "column": 3125 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 263, "column": 0 },
+          "generated": { "line": 1, "column": 3127 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 263, "column": 0 },
+          "generated": { "line": 1, "column": 3132 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 263, "column": 0 },
+          "generated": { "line": 1, "column": 3134 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 263, "column": 0 },
+          "generated": { "line": 1, "column": 3139 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 268, "column": 0 },
+          "generated": { "line": 1, "column": 3147 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 4, "column": 0 },
+          "generated": { "line": 1, "column": 3149 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 270, "column": 0 },
+          "generated": { "line": 1, "column": 3152 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 270, "column": 0 },
+          "generated": { "line": 1, "column": 3160 }
+        },
+        {
+          "source": "../../node_modules/@taskbuddy/add-on/lib/tb-api.js",
+          "original": { "line": 270, "column": 0 },
+          "generated": { "line": 1, "column": 3166 }
+        }
+      ],
+      "sources": {
+        "../../node_modules/@taskbuddy/add-on/lib/tb-api.js": "\"use strict\";\nObject.defineProperty(exports, \"__esModule\", { value: true });\nexports.TBAPI = void 0;\nvar TBAPI = /** @class */ (function () {\n    function TBAPI(tbcom, context) {\n        this.tbCommunication = tbcom;\n        this.ctx = context;\n    }\n    /**\n     * reRender - re-renders the add-on to for example reflect changes made to some Taskbuddy data\n     */\n    TBAPI.prototype.reRender = function () {\n        this.tbCommunication.request({\n            cmd: 'get',\n            type: 're-render',\n            body: {\n                context: this.ctx,\n            },\n        }, function (res) { });\n    };\n    /**\n     * alert - open an Alert modal inside Taskbuddy UI\n     */\n    TBAPI.prototype.alert = function (message) {\n        var _this = this;\n        return new Promise(function (resolve, reject) {\n            _this.tbCommunication.request({\n                cmd: 'get',\n                type: 'alert-modal',\n                body: {\n                    msg: message,\n                    context: _this.ctx,\n                },\n            }, function (res) {\n                if (res.response.status === 200) {\n                    resolve(true);\n                }\n                else {\n                    resolve(false);\n                }\n            });\n        });\n    };\n    /**\n     * webView - open a Web View (iframe) modal inside Taskbuddy UI\n     */\n    TBAPI.prototype.webView = function (title, url) {\n        var _this = this;\n        return new Promise(function (resolve, reject) {\n            _this.tbCommunication.request({\n                cmd: 'get',\n                type: 'web-view-modal',\n                body: {\n                    title: title,\n                    url: url,\n                    context: _this.ctx,\n                },\n            }, function (res) {\n                resolve();\n            });\n        });\n    };\n    /**\n     * closeWebView - closes an open Web View (iframe) modal inside Taskbuddy UI\n     */\n    TBAPI.prototype.closeWebView = function () {\n        var _this = this;\n        return new Promise(function (resolve, reject) {\n            _this.tbCommunication.request({\n                cmd: 'set',\n                type: 'close-web-view-modal',\n                body: {\n                    context: _this.ctx,\n                },\n            }, function (res) {\n                resolve();\n            });\n        });\n    };\n    /**\n     * linkTo - navigate to a Taskbuddy resource\n     */\n    TBAPI.prototype.linkTo = function (url) {\n        var _this = this;\n        return new Promise(function (resolve, reject) {\n            _this.tbCommunication.request({\n                cmd: 'get',\n                type: 'link-to-url',\n                body: {\n                    url: url,\n                    context: _this.ctx,\n                },\n            }, function (res) {\n                resolve();\n            });\n        });\n    };\n    /**\n     * postInChat - post a message orininating from the active user to the specified message channel\n     */\n    TBAPI.prototype.postInChat = function (channelId, msg) {\n        var _this = this;\n        return new Promise(function (resolve, reject) {\n            _this.tbCommunication.request({\n                cmd: 'set',\n                type: 'post-in-chat',\n                body: {\n                    channelId: channelId,\n                    msg: msg,\n                    context: _this.ctx,\n                },\n            }, function (res) {\n                if (res.response.status === 200) {\n                    resolve(res.response.body);\n                }\n                else {\n                    reject('Could not post chat msg');\n                }\n            });\n        });\n    };\n    /**\n     * getActiveContextInformation - get information about the given resource type that is in the current context\n     */\n    TBAPI.prototype.getActiveContextInformation = function (entity) {\n        var _this = this;\n        return new Promise(function (resolve, reject) {\n            _this.tbCommunication.request({\n                cmd: 'get',\n                type: 'active-' + entity,\n                body: {\n                    context: _this.ctx,\n                },\n            }, function (res) {\n                if (res.response.status === 200) {\n                    resolve(res.response.body);\n                }\n                else {\n                    reject('Could not get active ' + entity);\n                }\n            });\n        });\n    };\n    /**\n     * activeAccount - get information about the active Account in context\n     */\n    TBAPI.prototype.activeAccount = function () {\n        return this.getActiveContextInformation('account');\n    };\n    /**\n     * activeUser - get information about the active User in context\n     */\n    TBAPI.prototype.activeUser = function () {\n        return this.getActiveContextInformation('user');\n    };\n    /**\n     * activeJob - get information about the active Job in context\n     */\n    TBAPI.prototype.activeJob = function () {\n        return this.getActiveContextInformation('job');\n    };\n    /**\n     * activeChecklist - get information about the active Checklist in context\n     */\n    TBAPI.prototype.activeChecklist = function () {\n        return this.getActiveContextInformation('checklist');\n    };\n    /**\n     * activeClient - get information about the active Client in context\n     */\n    TBAPI.prototype.activeClient = function () {\n        return this.getActiveContextInformation('client');\n    };\n    /**\n     * activeSite - get information about the active Site in context\n     */\n    TBAPI.prototype.activeSite = function () {\n        return this.getActiveContextInformation('site');\n    };\n    /**\n     * getResource - get information about a resource\n     */\n    TBAPI.prototype.getResource = function (entity, id) {\n        var _this = this;\n        return new Promise(function (resolve, reject) {\n            var body = {};\n            // @ts-ignore\n            body[entity + \"_id\"] = id;\n            _this.tbCommunication.request({\n                cmd: 'get',\n                type: 'resource-' + entity,\n                body: body,\n            }, function (res) {\n                if (res.response.status === 200) {\n                    resolve(res.response.body);\n                }\n                else {\n                    reject('Could not get ' + entity);\n                }\n            });\n        });\n    };\n    /**\n     * getUser - get information about a User\n     */\n    TBAPI.prototype.getUser = function (userId) {\n        return this.getResource('user', userId);\n    };\n    /**\n     * getJob - get information about a Job\n     */\n    TBAPI.prototype.getJob = function (jobId) {\n        return this.getResource('job', jobId);\n    };\n    /**\n     * getStorage - get storage data\n     */\n    TBAPI.prototype.getStorage = function (type, resourceId, key, availableTo) {\n        var _this = this;\n        return new Promise(function (resolve, reject) {\n            _this.tbCommunication.request({\n                cmd: 'get',\n                type: 'storage',\n                body: {\n                    context: _this.ctx,\n                    type: type,\n                    resourceId: resourceId,\n                    key: key,\n                    availableTo: availableTo,\n                },\n            }, function (res) {\n                if (res.response.status === 200) {\n                    resolve(JSON.parse(res.response.body.data));\n                }\n                else {\n                    reject(\"Could not get storage for \" + type + \", \" + resourceId + \", \" + key + \", \" + availableTo);\n                }\n            });\n        });\n    };\n    /**\n     * setStorage - set storage data\n     */\n    TBAPI.prototype.setStorage = function (type, resourceId, key, availableTo, data) {\n        var _this = this;\n        return new Promise(function (resolve, reject) {\n            _this.tbCommunication.request({\n                cmd: 'set',\n                type: 'storage',\n                body: {\n                    context: _this.ctx,\n                    type: type,\n                    resourceId: resourceId,\n                    key: key,\n                    availableTo: availableTo,\n                    data: JSON.stringify(data),\n                },\n            }, function (res) {\n                if (res.response.status === 200) {\n                    resolve();\n                }\n                else {\n                    reject(\"Could not set storage for \" + type + \", \" + resourceId + \", \" + key + \", \" + availableTo);\n                }\n            });\n        });\n    };\n    return TBAPI;\n}());\nexports.TBAPI = TBAPI;\n"
+      },
+      "lineCount": null
+    }
+  },
+  "error": null,
+  "hash": "3a239812444c4c171fc3abf23c66f0aa",
+  "cacheData": { "env": {} }
+}

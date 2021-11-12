@@ -1,0 +1,15 @@
+{
+  "id": "Cd2M",
+  "dependencies": [
+    {
+      "name": "/private/var/www/tbe_add_on/package.json",
+      "includedInParent": true,
+      "mtime": 1635423569000
+    }
+  ],
+  "generated": { "js": "module.exports=\"/09dd8c2662b96ce14928333f055c5580.png\";" },
+  "sourceMaps": null,
+  "error": null,
+  "hash": "1bf9178757db5dc2645c26b40d577c9d",
+  "cacheData": { "env": {} }
+}

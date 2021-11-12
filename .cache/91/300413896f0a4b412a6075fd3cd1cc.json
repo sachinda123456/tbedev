@@ -1,0 +1,18 @@
+{
+  "id": "QHhG",
+  "dependencies": [
+    {
+      "name": "./../../distTsc/src/ts/review.js",
+      "dynamic": true,
+      "resolved": "/private/var/www/tbe_add_on/distTsc/src/ts/review.js",
+      "parent": "/private/var/www/tbe_add_on/src/html/review.html"
+    }
+  ],
+  "generated": {
+    "html": "<html><head><meta charset=\"utf-8\"><script src=\"https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js\" integrity=\"sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==\" crossorigin referrerpolicy=\"no-referrer\"></script></head><body> nothing <script src=\"/7f5b3db490aca18c8423285a603782ca.js\"></script> </body></html>"
+  },
+  "sourceMaps": null,
+  "error": null,
+  "hash": "fa3151d007b58149b91c7efbd885a57b",
+  "cacheData": {}
+}

@@ -1,0 +1,15 @@
+{
+  "id": "EPsV",
+  "dependencies": [
+    {
+      "name": "/private/var/www/tbe_add_on/package.json",
+      "includedInParent": true,
+      "mtime": 1635423569000
+    }
+  ],
+  "generated": { "js": "module.exports=\"/10fb15c77258a991b0028080a64fb42d.png\";" },
+  "sourceMaps": null,
+  "error": null,
+  "hash": "3877b719f5ffc9b03a4000468d2e4768",
+  "cacheData": { "env": {} }
+}

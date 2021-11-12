@@ -1,0 +1,15 @@
+{
+  "id": "yB7T",
+  "dependencies": [
+    {
+      "name": "/private/var/www/tbe_add_on/package.json",
+      "includedInParent": true,
+      "mtime": 1635423569000
+    }
+  ],
+  "generated": { "js": "module.exports=\"/fb5c81ed3a220004b71069645f112867.png\";" },
+  "sourceMaps": null,
+  "error": null,
+  "hash": "b917fb760b5483ad4288ba9a2240cad0",
+  "cacheData": { "env": {} }
+}
